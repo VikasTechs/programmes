@@ -1,30 +1,66 @@
-def addition(num):
-    print(num)
-def substraction(num1):
-    print(num1)
-def multiply(num2):
-    print(num2)
-def division(num3):
-    print(num3)
-print("1. add \n 2. sub \n 3. mul \n 4. div")
-option = int(input("SELECT OPTION >>>>>>"))
-one = int(input("ENTER 1st YOUR NUMBER"))
-two = int(input("ENTER 2nd YOUR NUMBER"))
-num = one + two
-num1 = one - two
-num2 = one * two
-num3 = one / two
-if option==1:
-    addition(num)
-elif option==2:
-    substraction(num1)
-elif option==3:
-    substraction(num2)
-elif option==4:
-    substraction(num3)
-else:
-    print("invalid")
+import pyttsx3
+import speech_recognition as sr
+import datetime
+import os
+
+mya = pyttsx3.init('sapi5')
+
+voices = mya.getProperty('voices')
+mya.setProperty('voices' , voices[0].id)
 
 
 
+def speak(audio):
+    mya.say(audio)
+    print(audio)
+    mya.runAndWait()
 
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("lisening...")
+        r.pause_threshold = 1
+        audio = r.listen(source,timeout=1,phrase_time_limit=5)
+        
+    try:
+        print("recognising...")
+        query = r.recognize_google(audio,language='en-in')
+        print(f"user said:{query}")
+    except Exception as e:
+        speak("Say that again please")
+        return None
+    return query    
+
+def wish():
+    hour = int(datetime.datetime.now().hour)   
+    
+    if hour >=8 and hour <= 12:
+        speak("good morning sir")
+        
+    elif hour >= 12 and hour <= 18:
+         speak("good afternon sir")
+    else:
+        speak("good evening sir")  
+    speak("i am Edith please tell me what can i do for you")    
+if __name__ == '__main__': 
+    wish() 
+    while True:
+        
+        
+        query=takecommand().lower()
+        
+        
+        
+        if "open google" in query:
+            path = "C:\\Users\\Electrobt\\Desktop\\poorni\\prepared\\22.jpg"
+            os.system("start cmd")
+           
+             
+                
+        else:
+            speak("say something")
+           
+            
+           
+           
+           
