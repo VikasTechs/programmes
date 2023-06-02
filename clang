@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main() {
+ int a, b;
+ printf("enter your first number:");
+ scanf("%d", &a);
+ printf("enter your second number:");
+ scanf("%d", &b);
+ int sum = a + b, sum1 = a - b, sum2 = a * b, sum3 = a / b;
+ printf("enter your operation : \n 1.add \n 2.sub \n 3.mul \n 4.div");
+ int choice;
+ scanf("%d", &choice);
+if (choice == 1){
+  printf("your sum is %d",sum);
+}
+if (choice == 2){
+  printf("your difference is %d",sum1);
+}
+if (choice == 3){
+  printf("your multiplication is %d",sum2);
+
+}
+else if (choice == 4){
+  printf("your division is %d", sum3);
+}
+
+
+
+}
