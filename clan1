@@ -1,0 +1,47 @@
+# include<stdio.h>
+#include<stdio.h>
+int main(){
+   
+    printf("---------------------------------------------------------------- \n          poornima enterprises              \n---------------------------------------------------------------- \n");
+ printf("ADD YOR ITEMS : "); 
+printf("ITEMS : \n 1)RICE               | \n 2)WHEAT              | \n 3)SOAP               | \n 4)OIL                | \n 5)ALMOND             | \n 6)RAGI               | \n 7)MIX FRUIT          | \n");
+printf("----------------------- \n");
+printf("ENTER ITEM NUMBER : \n");
+printf("----------------------- ");
+int a;
+scanf("%d",&a);
+
+if (a==1)
+{
+    printf("you have selected rice");
+}
+else if(a==2)
+{
+printf("you have selected wheat");    
+  
+}
+else if(a==3){
+    printf("you have selected soap");
+}
+else if (a==4)
+{
+  printf("you have selected oil");
+}
+else if(a==5){
+    printf("you have selected almond");
+}
+else if(a==6){
+    printf("you have selected ragi");
+}
+else if(a==7){
+    printf("you have selected mix fruit");
+}
+else
+{   
+    printf("select something");
+    
+}
+
+
+
+}
