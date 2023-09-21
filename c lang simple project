@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+  while(1){
+  int tab,a,exit;
+  printf("ENTER YOUR TABLE : ");
+  scanf("%d",&tab);
+  a=tab;
+  for(int i = 1; i <= 10; i++){
+    printf("%d \n",tab*i);
+    
+  }
+  printf("DO YOU WANT TO EXIT(2)) & CONTINUE(1) :  ");
+    scanf("%d",&exit);
+    if(exit == 2){
+        break;
+      }
+    else if (exit == 1)
+     {
+        continue;
+     }
+  }
+}
